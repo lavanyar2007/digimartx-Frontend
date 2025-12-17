@@ -12,7 +12,7 @@ const RegistrationForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/auth/register", {
+      await axios.post("https://digimartx-backend.onrender.com/auth/register", {
         name,
         email,
         password,

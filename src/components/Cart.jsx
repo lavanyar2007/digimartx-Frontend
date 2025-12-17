@@ -28,7 +28,7 @@ const Cart = ({ CartProduct, setCartProduct }) => {
     const fetchCart = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("http://localhost:3000/carts", {
+        const res = await axios.get("https://digimartx-backend.onrender.com/carts", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -62,7 +62,7 @@ const Cart = ({ CartProduct, setCartProduct }) => {
     const product = CartProduct[index];
 
     await axios.put(
-      "http://localhost:3000/carts",
+      "https://digimartx-backend.onrender.com/carts",
       { productId: product.id, quantity: qty },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -78,7 +78,7 @@ const Cart = ({ CartProduct, setCartProduct }) => {
 
   // ---------------- REMOVE ----------------
   const handleRemove = async (id, index) => {
-    await axios.delete(`http://localhost:3000/carts/${id}`, {
+    await axios.delete(`https://digimartx-backend.onrender.com/carts/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -110,7 +110,7 @@ const Cart = ({ CartProduct, setCartProduct }) => {
 
     // 2️⃣ Place order
     const res = await axios.post(
-      "http://localhost:3000/orders",
+      "https://digimartx-backend.onrender.com/orders",
       {
         shippingAddress,
         paymentMethod,
@@ -235,7 +235,7 @@ const Cart = ({ CartProduct, setCartProduct }) => {
               onClick={() => { setShowAddress(true);
                       setTimeout(() => {
                         document.getElementById("address-section")?.scrollIntoView({
-                          behavior: "smooth",});
+                          behavior: "smooth", });
                       }, 100);
                     }}
 

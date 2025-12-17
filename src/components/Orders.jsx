@@ -29,7 +29,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/orders", {
+        const res = await axios.get("https://digimartx-backend.onrender.com/orders", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

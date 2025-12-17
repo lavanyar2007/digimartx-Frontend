@@ -30,7 +30,7 @@ const Main = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/products");
+        const res = await axios.get("https://digimartx-backend.onrender.com/products");
         setProducts(res.data.products || res.data);
       } catch (err) {
         console.error("Failed to fetch products:", err);
@@ -65,7 +65,7 @@ const addToCart = async (product) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:3000/carts",
+      "https://digimartx-backend.onrender.com/carts",
       { productId: product._id, quantity: 1 },
       { headers: { Authorization: `Bearer ${token}` } }
     );
